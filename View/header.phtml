@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+	<head>
+		<title>Concessionaria</title>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/js/jquery-ui/jquery-ui.min.css" />
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                </div>
+                <ul class="nav navbar-nav">
+                    <?php switch ($_SERVER["REQUEST_URI"]) {
+                        case '/index.php?c=carro':
+                        ?>
+                            <li ><a href="index.php">Home</a></li>
+                            <li class="active"><a href="index.php?c=carro">Carros</a></li>
+                            <li><a href="index.php?c=fornecedor">Fornecedores</a></li>
+                        <?php
+                            break;
+                            case '/index.php?c=fornecedor':
+                        ?>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="index.php?c=carro">Carros</a></li>
+                            <li class="active"><a href="index.php?c=fornecedor">Fornecedores</a></li>
+                        <?php
+                            break;
+                        default:
+                        ?>
+                            <li class="active"><a href="index.php">Home</a></li>
+                            <li><a href="index.php?c=carro">Carros</a></li>
+                            <li><a href="index.php?c=fornecedor">Fornecedores</a></li>
+                        <?php
+                            break;
+                    } ?>
+                    </ul>
+            </div>
+        </nav>
+    <div class="container">
+
+        

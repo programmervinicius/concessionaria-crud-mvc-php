@@ -1,0 +1,45 @@
+<h1 class="page-header">
+    Novo Fornecedor
+</h1>
+
+<ol class="breadcrumb">
+    <li><a href="?c=fornecedor">Fornecedores</a></li>
+    <li class="active">Novo Fornecedor</li>
+</ol>
+
+<form id="frm-fornecedor" action="?c=fornecedor&a=Create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Id</label>
+        <input type="text" name="idFornecedor" class="form-control" placeholder="Insira o id do fornecedor" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="nomeFornecedor" class="form-control" placeholder="Insira o nome do fornecedor" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Endereço</label>
+        <input type="text" name="enderecoFornecedor" class="form-control" placeholder="Insira o endereço do fornecedor" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Telefone</label>
+        <input type="text" name="contatoFornecedor" class="form-control" placeholder="Insira o telefone para contato" data-validacion-tipo="requerido|min:10" />
+    </div>
+
+    <hr />
+
+    <div class="text-right">
+        <button class="btn btn-success">Salvar</button>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $("#frm-proveedor").submit(function(){
+            return $(this).validate();
+        });
+    })
+</script>

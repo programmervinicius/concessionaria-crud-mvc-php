@@ -1,0 +1,46 @@
+<h1 class="page-header">
+    <?php echo $carro->placaCarro != null ? $carro->marcaCarro : 'Novo Carro'; ?>
+</h1>
+
+<ol class="breadcrumb">
+    <li><a href="?c=carro">Carros</a></li>
+    <li class="active"><?php echo $carro->placaCarro != null ? $carro->marcaCarro : 'Novo Carro'; ?></li>
+</ol>
+
+<form id="frm-carro" action="?c=carro&a=Update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="placaCarro" value="<?php echo $carro->placaCarro; ?>" />
+
+    <div class="form-group">
+        <label>Id do Fornecedor</label>
+        <input type="text" name="idFornecedor" value="<?php echo $carro->idFornecedor; ?>" class="form-control" placeholder="Insira o id do Fornecedor" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Marca do Carro</label>
+        <input type="text" name="marcaCarro" value="<?php echo $carro->marcaCarro; ?>" class="form-control" placeholder="Insira a marca do carro" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Preço do Carro</label>
+        <input type="text" name="precoCarro" value="<?php echo $carro->precoCarro; ?>" class="form-control" placeholder="Insira o preço do carro" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Descrição do Carro</label>
+        <input type="text" name="descCarro" value="<?php echo $carro->descCarro; ?>" class="form-control" placeholder="Insira a descrição do carro" data-validacion-tipo="requerido|min:240" />
+    </div>
+
+    <hr />
+
+    <div class="text-right">
+        <button class="btn btn-success">Atualizar</button>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $("#frm-producto").submit(function(){
+            return $(this).validate();
+        });
+    })
+</script>

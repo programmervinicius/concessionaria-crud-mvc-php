@@ -1,0 +1,34 @@
+<h1 class="page-header">Carros</h1>
+
+<div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=carro&a=NewCarro">Adicionar Carro</a> 
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:180px;">Id do Fornecedor</th>
+            <th style="width:130px;">Placa</th>
+            <th style="width:130px;">Marca</th>
+            <th style="width:130px;">Preço</th>
+            <th style="width:360px;">Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->modelo->ListarCarros() as $r): ?>
+        <tr>
+            <td><?php echo $r->idFornecedor; ?></td>
+            <td><?php echo $r->placaCarro; ?></td>
+            <td><?php echo $r->marcaCarro; ?></td>
+            <td><?php echo $r->precoCarro; ?></td>
+            <td><?php echo $r->descCarro; ?></td>
+            <td>
+                <a class="btn btn-info" href="?c=carro&a=Select&placaCarro=<?php echo $r->placaCarro; ?>">Editar</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" onclick="javascript:return confirm('Tem certeza que deseja deletar este produto?');" href="?c=carro&a=Delete&placaCarro=<?php echo $r->placaCarro; ?>">Deletar</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

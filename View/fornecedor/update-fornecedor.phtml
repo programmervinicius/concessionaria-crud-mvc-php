@@ -1,0 +1,41 @@
+<h1 class="page-header">
+    <?php echo $fornecedor->idFornecedor != null ? $fornecedor->idFornecedor : 'Novo Fornecedor'; ?>
+</h1>
+
+<ol class="breadcrumb"> 
+    <li><a href="?c=fornecedor">Fornecedores</a></li>
+    <li class="active"><?php echo $fornecedor->idFornecedor != null ? $fornecedor->idFornecedor : 'Novo Fornecedor'; ?></li>
+</ol>
+
+<form id="frm-fornecedor" action="?c=fornecedor&a=Update" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="idFornecedor" value="<?php echo $fornecedor->idFornecedor; ?>" />
+
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="nomeFornecedor" value="<?php echo $fornecedor->nomeFornecedor; ?>" class="form-control" placeholder="Insira o nome do fornecedor" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Endereço</label>
+        <input type="text" name="enderecoFornecedor" value="<?php echo $fornecedor->enderecoFornecedor; ?>" class="form-control" placeholder="Insira o endereço do fornecedor" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Telefone</label>
+        <input type="text" name="contatoFornecedor" value="<?php echo $fornecedor->contatoFornecedor; ?>" class="form-control" placeholder="Insira o contato do fornecedor" data-validacion-tipo="requerido|min:10" />
+    </div>
+
+    <hr />
+
+    <div class="text-right">
+        <button class="btn btn-success">Atualizar</button>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $("#frm-proveedor").submit(function(){
+            return $(this).validate();
+        });
+    })
+</script>

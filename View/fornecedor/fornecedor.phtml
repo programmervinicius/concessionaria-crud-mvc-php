@@ -1,0 +1,32 @@
+<h1 class="page-header">Fornecedores</h1>
+
+<div class="well well-sm text-right">
+    <a class="btn btn-primary" href="?c=fornecedor&a=NewFornecedor">Adicionar Fornecedor</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:80px;">Id</th>
+            <th style="width:200px;">Nome</th>
+            <th style="width:450px;">Endereço</th>
+            <th style="width:200px;">Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->modelo->ListarFornecedores() as $r): ?>
+        <tr>
+            <td><?php echo $r->idFornecedor; ?></td>
+            <td><?php echo $r->nomeFornecedor; ?></td>
+            <td><?php echo $r->enderecoFornecedor; ?></td>
+            <td><?php echo $r->contatoFornecedor; ?></td>
+            <td>
+                <a class="btn btn-info" href="?c=fornecedor&a=Select&idFornecedor=<?php echo $r->idFornecedor; ?>">Editar</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" onclick="javascript:return confirm('Tem certeza que deseja deletar este fornecedor?');" href="?c=fornecedor&a=Delete&idFornecedor=<?php echo $r->idFornecedor; ?>">Deletar</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

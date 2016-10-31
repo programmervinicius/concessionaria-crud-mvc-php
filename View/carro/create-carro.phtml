@@ -1,0 +1,50 @@
+<h1 class="page-header">
+    Adicionar Carro
+</h1>
+
+<ol class="breadcrumb">
+    <li><a href="?c=carro">Carros</a></li>
+    <li class="active">Adicionar Carro</li>
+</ol>
+
+<form id="frm-carro" action="?c=carro&a=Create" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Id do Fornecedor</label>
+        <input type="text" name="idFornecedor" class="form-control" placeholder="Insira o Id do Fornecedor" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Placa do Carro</label>
+        <input type="text" name="placaCarro" class="form-control" placeholder="Insira a Placa do Carro" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Marca do Carro</label>
+        <input type="text" name="marcaCarro" class="form-control" placeholder="Insira a Marca do Carro" data-validacion-tipo="requerido|min:100" />
+    </div>
+
+    <div class="form-group">
+        <label>Preço do Carro</label>
+        <input type="text" name="precoCarro" class="form-control" placeholder="Insira o Preço do Carro" data-validacion-tipo="requerido|min:20" />
+    </div>
+
+    <div class="form-group">
+        <label>Descrição do Carro</label>
+        <input type="text" name="descCarro" class="form-control" placeholder="Insira a Descrição do Carro" data-validacion-tipo="requerido|min:240" />
+    </div>
+
+    <hr />
+
+    <div class="text-right">
+        <button class="btn btn-success">Salvar</button>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function(){
+        $("#frm-producto").submit(function(){
+            return $(this).validate();
+        });
+    })
+</script>
